@@ -47,7 +47,7 @@ create table Reservation(
   to_res DATE NOT NULL,
   car INTEGER NOT NULL,
   old_details INTEGER UNIQUE, -- Either NULL, or changed once
-  resvStatus NOT NULL,
+  status resvStatus NOT NULL,
   FOREIGN KEY (car) REFERENCES Car,
   FOREIGN KEY (old_details) REFERENCES Reservation,
   check (from_res <= to_res) -- TODO: Not sure if needed
